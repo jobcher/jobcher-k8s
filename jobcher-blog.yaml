@@ -1,0 +1,38 @@
+# 部署应用
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jobcher-blog-deployment
+  labels:
+    app: jobcher-blog	
+spec:	        
+  replicas: 3
+  selector:
+    matchLabels:
+      app: jobcher-blog
+  template:
+    metadata:
+      labels:
+        app: jobcher-blog
+    spec:
+      containers:
+      - name: jobcher-blog-pod
+        image: hub.jobcher.com/blog/hugo:latest
+---
+#暴露端口
+apiVersion: v1
+kind: Service
+metadata:
+  name: jobcher-service
+  labels:
+    app: jobcher-blog
+spec:
+  selector:
+    app: jobcher-blog
+  ports:
+  - name: jobcher-port
+    protocol: TCP
+    port: 80
+    nodePort: 4312 
+    targetPort: 80
+  type: NodePort
