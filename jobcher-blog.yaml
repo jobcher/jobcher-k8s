@@ -33,6 +33,6 @@ spec:
   - name: jobcher-port
     protocol: TCP
     port: 80
-    nodePort: 4312 
-    targetPort: 80
+    nodePort: 32612
+    targetPort: 4312
   type: NodePort
