@@ -24,6 +24,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: jobcher-service
+  annotations:
     lb.kubesphere.io/v1alpha1: openelb
     protocol.openelb.kubesphere.io/v1alpha1: layer2
     eip.openelb.kubesphere.io/v1alpha2: layer2-eip
