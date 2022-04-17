@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('k8s部署') {
             steps {
-                echo 'k8s升级'
-                sh 'kubectl apply -f jobcher-blog.yaml'
+                echo 'k8s po 升级'
+                sh 'sh restart-pod.sh'
             }
         }
     }
