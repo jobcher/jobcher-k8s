@@ -15,7 +15,7 @@ spec:
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1 #更新期间不少于3-1
-      maxSure: 1 #更新期间不超过3+1
+      maxSurge: 1 #更新期间不超过3+1
   template:
     metadata:
       labels:
