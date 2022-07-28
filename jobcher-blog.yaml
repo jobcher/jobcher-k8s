@@ -10,6 +10,12 @@ spec:
   selector:
     matchLabels:
       app: jobcher-blog
+  minReadySecounds: 10 #准备10s
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1 #更新期间不少于3-1
+      maxSure: 1 #更新期间不超过3+1
   template:
     metadata:
       labels:
