@@ -10,7 +10,7 @@ spec:
   selector:
     matchLabels:
       app: jobcher-blog
-  minReadySecounds: 10 #准备10s
+  minReadySeconds: 10 #准备10s
   strategy:
     type: RollingUpdate
     rollingUpdate:
