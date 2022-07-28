@@ -4,7 +4,7 @@ pipeline {
         stage('k8s部署') {
             steps {
                 echo 'k8s po 升级'
-                sh 'kubectl apply -f jobcher-blog.yaml'
+                sh 'kubectl rollout restart deployment jobcher-blog-deployment'
             }
         }
     }
